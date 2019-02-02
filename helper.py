@@ -54,6 +54,7 @@ def display_stats(cifar10_dataset_folder_path, batch_id, sample_id):
     print('Image - Shape: {}'.format(sample_image.shape))
     print('Label - Label Id: {} Name: {}'.format(sample_label, label_names[sample_label]))
     plt.axis('off')
+    plt.imsave("sample_image.jpg", sample_image)
     plt.imshow(sample_image)
 
 
@@ -163,3 +164,4 @@ def display_image_predictions(features, labels, predictions):
         axies[image_i][1].set_yticks(ind + margin)
         axies[image_i][1].set_yticklabels(pred_names[::-1])
         axies[image_i][1].set_xticks([0, 0.5, 1.0])
+    plt.savefig("probability.png", bbox_inches = "tight")
